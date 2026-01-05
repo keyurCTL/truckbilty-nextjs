@@ -1,0 +1,230 @@
+.footer {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     background: url('/images/users-bg.png') center / cover no-repeat;
+     overflow: hidden;
+}
+
+.footerContainer {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     max-width: 1260px;
+     margin: 0 auto;
+     padding: 50px 10px;
+}
+
+.footerTop {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+     width: 100%;
+}
+
+.ftThree,
+.ftTwo,
+.ftOne {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+.ftOne h4,
+.ftThree h4 {
+     font-size: 1.25rem;
+     color: var(--color-white);
+     margin-bottom: 20px;
+     font-family: var(--font-primary);
+     text-shadow: 1px 1px 4px #00000080;
+}
+
+.contactInfo {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+}
+
+:global(.contact-link) {
+     display: inline-flex;
+     align-items: center;
+     gap: 10px;
+     text-decoration: none;
+     color: var(--color-white);
+     font-size: 1rem;
+}
+
+.ftThree .contactInfo {
+     margin-top: 20px;
+     width: 80%;
+}
+
+.ftTwo img {
+     max-width: 300px;
+     filter: brightness(0) invert(1) drop-shadow(0px 4px #00000080);
+}
+
+.socialLinks {
+     display: flex;
+     gap: 15px;
+     justify-content: center;
+     align-items: center;
+}
+
+.footerMiddle {
+     margin: 20px 0 40px 0;
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+     gap: 25px;
+}
+
+.appButtons {
+     display: flex;
+     gap: 20px;
+     align-items: center;
+}
+
+.appButtons a {
+     display: inline-block;
+     text-decoration: none;
+}
+
+.appButtons a img {
+     height: 45px;
+     transition: transform 0.3s ease;
+}
+
+.appButtons a img:hover {
+     transform: scale(1.05);
+}
+
+.footerNavigation {
+     display: flex;
+     gap: 30px;
+     justify-content: center;
+     align-items: center;
+}
+
+.footerNavigation a {
+     text-decoration: none;
+     color: var(--color-white);
+     font-size: 1rem;
+     font-weight: bold;
+}
+
+.footerBottom {
+     border-top: 4px dotted var(--color-lime);
+     padding: 50px 0 0 0;
+}
+
+.copyrightContent {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 20px;
+     flex-wrap: wrap;
+     color: var(--color-white);
+     font-size: 1rem;
+}
+
+.copyrightContent a {
+     color: var(--color-white);
+     text-decoration: none;
+     font-weight: bold;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+@media (max-width: 1200px) {
+     .footerContainer {
+          padding: 40px 20px;
+     }
+}
+
+@media (max-width: 1024px) {
+
+     .footerTop {
+          gap: 20px;
+     }
+
+     .ftThree .contactInfo {
+          width: 100%;
+          align-items: center;
+     }
+
+     .ftTwo {
+          /* logo goes first */
+          margin-bottom: 30px;
+     }
+}
+
+@media (max-width: 768px) {
+
+     .footerTop {
+          flex-direction: column;
+          text-align: center;
+     }
+
+     .ftOne,
+     .ftTwo,
+     .ftThree {
+          width: 100%;
+     }
+
+     .ftTwo img {
+          max-width: 220px;
+     }
+
+     .footerNavigation {
+          flex-direction: column;
+          gap: 15px;
+     }
+
+     .copyrightContent {
+          flex-direction: column;
+          text-align: center;
+     }
+
+     .footerTop {
+          flex-direction: column;
+     }
+
+     .ftTwo {
+          order: -1;
+     }
+
+     .ftOne {
+          order: 2;
+     }
+
+     .ftThree {
+          order: 3;
+          gap: 10px;
+     }
+
+     .ftTwo img {
+          max-width: 260px;
+     }
+}
+
+@media (max-width: 480px) {
+     .appButtons {
+          flex-direction: column;
+     }
+
+     .contactInfo span {
+          font-size: 0.9rem;
+     }
+
+     .footerNavigation a {
+          font-size: 0.95rem;
+     }
+}

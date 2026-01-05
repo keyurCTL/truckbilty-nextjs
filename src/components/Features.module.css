@@ -1,0 +1,135 @@
+.features {
+     position: relative;
+     background: url("/images/features-bg.png");
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 100%;
+     width: 100%;
+}
+
+.leftLine {
+     left: 5%;
+     background: var(--color-white);
+}
+
+.rightLine {
+     right: 5%;
+     background: var(--color-white);
+}
+
+.featuresContent {
+     position: relative;
+     z-index: 2;
+}
+
+.headingDesign {
+     /* Inherits from global .heading-design */
+}
+
+.featuresGrid {
+     max-width: 1260px;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: var(--spacing-lg);
+     padding: 20px var(--spacing-md) 50px var(--spacing-md);
+     position: relative;
+     z-index: 2;
+}
+
+.featuresCard {
+     background: var(--color-primary);
+     border-radius: 12px;
+     border: 2px solid var(--color-black);
+     box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+     position: relative;
+}
+
+.fcCardIcon {
+     position: absolute;
+     top: -10%;
+     right: -7%;
+     height: 80px;
+     width: 80px;
+     background: var(--color-lime);
+     border-radius: 50%;
+     border: 2px solid var(--color-black);
+     padding: 10px;
+}
+
+.fcCardIcon img {
+     width: 100%;
+     height: auto;
+     filter: drop-shadow(1px 1px 2px #3d3d3d);
+}
+
+.fcCardContent {
+     margin: 8px;
+     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23FEF100FF' stroke-width='4' stroke-dasharray='2%2c 2' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+     border-radius: 12px;
+     padding: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     gap: 15px;
+     min-height: 229px;
+}
+
+.title {
+     font-size: 2.125rem;
+     font-family: var(--font-heading);
+     color: var(--color-lime);
+     letter-spacing: 2px;
+     text-shadow: 4px 0px 0px var(--color-secondary);
+     text-align: center;
+}
+
+.fcCardContent h3 {
+     font-family: var(--font-heading);
+     color: var(--color-lime);
+     letter-spacing: 2px;
+     text-shadow: 4px 0px 0px var(--color-secondary);
+     text-align: center;
+}
+
+.fcCardContent p {
+     color: var(--color-white);
+     width: 90%;
+     text-align: center;
+     margin-top: 10px;
+     font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+     .featuresGrid {
+          padding: 20px var(--spacing-lg) 50px var(--spacing-lg);
+          grid-template-columns: repeat(2, 1fr);
+     }
+}
+
+@media (max-width: 768px) {
+
+     .title,
+     .fcCardContent h3 {
+          font-size: 1.75rem;
+     }
+
+     .fcCardContent p {
+          width: 100%;
+          font-size: 0.875rem;
+     }
+
+     .fcCardIcon {
+          height: 70px;
+          width: 70px;
+     }
+}
+
+@media (max-width: 576px) {
+     .featuresGrid {
+          grid-template-columns: repeat(1, 1fr);
+     }
+}

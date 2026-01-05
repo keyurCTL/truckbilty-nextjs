@@ -1,0 +1,158 @@
+.demo {
+     position: relative;
+     width: 100%;
+     background: url('/images/transporter-bg.png') center / cover no-repeat;
+     overflow: hidden;
+}
+
+/* ROAD STRIP */
+.roadDivider {
+     position: relative;
+     width: 100%;
+     height: 110px;
+     background: url('/images/road.png') repeat-x center;
+     background-size: auto 100%;
+     z-index: 2;
+     top: 0px;
+     overflow: hidden;
+}
+
+/* Shadow depth */
+.roadDivider::after {
+     content: '';
+     position: absolute;
+     inset: 0;
+     box-shadow: inset 0 -12px 14px rgba(0, 0, 0, 0.55);
+     pointer-events: none;
+}
+
+.leftLine {
+     left: 5%;
+     background: var(--color-lime);
+     z-index: 1;
+}
+
+.rightLine {
+     right: 5%;
+     background: var(--color-lime);
+     z-index: 1;
+}
+
+.demoContainer {
+     max-width: 1260px;
+     margin: 0 auto 0 auto;
+     position: relative;
+     z-index: 3;
+     padding: 10px 0 0 0;
+     overflow: visible;
+     bottom: -50px;
+}
+
+.demoContainer :global(.heading-design) {
+     padding: 0 0 50px 0;
+}
+
+.demoContent {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-top: 10px;
+     gap: 20px;
+}
+
+.appButtons {
+     display: flex;
+     gap: 20px;
+     align-items: center;
+}
+
+.appButtons a {
+     display: inline-block;
+     text-decoration: none;
+}
+
+.appButtons a img {
+     height: 55px;
+     transition: transform 0.3s ease;
+}
+
+.appButtons a:hover img {
+     transform: scale(1.05);
+}
+
+.demoImage {
+     background: url("/images//demo-image.png") bottom / contain no-repeat;
+     max-width: 1000px;
+     width: 100%;
+     height: 500px;
+     position: relative;
+}
+
+.demoImage iframe {
+     position: absolute;
+     top: 9%;
+     right: 4%;
+     width: 66%;
+     height: 60%;
+     border: none;
+}
+
+@media (max-width: 992px) {
+     .demoImage {
+          height: 300px;
+     }
+
+     .demoImage iframe {
+          top: 5%;
+          right: 20.5%;
+          width: 42%;
+          height: 64%;
+     }
+}
+
+@media (max-width: 768px) {
+     .demoImage {
+          height: 300px;
+     }
+
+     .demoImage iframe {
+          top: 5%;
+          right: 12%;
+          width: 54%;
+          height: 64%;
+     }
+}
+
+@media (max-width: 576px) {
+
+     .appButtons a img {
+          height: 45px;
+          transition: transform 0.3s ease;
+     }
+
+     .roadDivider {
+          display: none;
+     }
+
+     .demoContainer {
+          bottom: 0;
+     }
+
+     .demoContainer :global(.heading-design) {
+          padding: 50px 0;
+     }
+
+     .demoImage {
+          background: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+     }
+
+     .demoImage iframe {
+          position: static;
+          width: 100%;
+          margin: 0 10px;
+     }
+}

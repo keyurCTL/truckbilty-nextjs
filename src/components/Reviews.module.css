@@ -1,0 +1,205 @@
+.reviews {
+     position: relative;
+     width: 100%;
+     overflow: hidden;
+}
+
+.leftLine {
+     left: 5%;
+     background: var(--color-lime);
+}
+
+.rightLine {
+     right: 5%;
+     background: var(--color-lime);
+}
+
+.reviewsContainer {
+     max-width: 1260px;
+     margin: 0 auto 50px auto;
+     position: relative;
+     z-index: 2;
+     padding: 10px 0 0 0;
+     overflow: visible;
+}
+
+.reviewsHeading {
+     color: var(--color-secondary) !important;
+     text-shadow: -4px 0px 0px var(--color-primary) !important;
+     -webkit-text-stroke: 0.1px var(--color-primary) !important;
+}
+
+.reviewsDevider {
+     display: flex;
+     justify-content: center;
+     align-items: start;
+     gap: 10px;
+     margin-top: 30px;
+}
+
+.statsGrid {
+     flex: 1;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: var(--spacing-sm);
+     justify-content: center;
+     align-items: center;
+}
+
+.statsBg {
+     background: url("../../public/images/red-stats-bg.png") center / contain no-repeat;
+     height: 100%;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 12px;
+     flex-direction: column;
+     padding: 50px 20px;
+}
+
+.statsTitle {
+     font-family: var(--font-primary);
+     color: var(--color-lime);
+     text-shadow: -2px -2px var(--color-secondary);
+     font-size: 1.5rem;
+     font-weight: 700;
+}
+
+.statsSubTitle {
+     color: var(--color-white);
+     font-weight: bold;
+     font-size: 1rem;
+     text-align: center;
+}
+
+/* Hanging Review Slider Section */
+.reviewWrapper {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     transition: transform 0.3s ease;
+     cursor: pointer;
+}
+
+/* The CSS Strings */
+.hangingString {
+     width: 80%;
+     height: 80px;
+     position: absolute;
+     z-index: 1;
+}
+
+.hangingString::before,
+.hangingString::after {
+     content: "";
+     position: absolute;
+     top: -300px;
+     /* Extends up towards the heading */
+     width: 5px;
+     height: 400px;
+     background-color: #b59a5d;
+     /* Brownish string color */
+}
+
+.hangingString::before {
+     left: 30%;
+}
+
+.hangingString::after {
+     right: 30%;
+}
+
+.reviewBg {
+     background: url("/images/review-bg.png") center/contain no-repeat;
+     width: 450px;
+     height: 400px;
+     padding: 30px 60px 60px 60px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     position: relative;
+     z-index: 2;
+}
+
+.sliderContent {
+     width: 90%;
+}
+
+.reviewerName {
+     font-size: 1.5rem;
+     font-weight: bold;
+     margin-bottom: 5px;
+     font-family: var(--font-primary);
+}
+
+.stars {
+     color: #f39c12;
+     font-size: 1.2rem;
+     margin-bottom: 15px;
+}
+
+.reviewText {
+     font-size: 0.95rem;
+     line-height: 1.5;
+     color: #333;
+}
+
+@media (max-width: 992px) {
+     .reviewsDevider {
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          gap: 40px;
+     }
+
+     .statsGrid {
+          grid-template-columns: repeat(2, 1fr);
+          width: 80%;
+     }
+
+     .hangingString {
+          display: none;
+     }
+}
+
+@media (max-width: 576px) {
+     .statsGrid {
+          grid-template-columns: repeat(1, 1fr);
+          width: 100%;
+     }
+
+     .reviewsDevider {
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-items: unset;
+          
+     }
+
+     .reviewBg {
+          width: 350px;
+          height: 300px;
+          padding: 30px 60px 60px 60px;
+     }
+
+     .reviewerName {
+          font-size: 1rem;
+     }
+
+     .stars {
+          color: #f39c12;
+          font-size: 1rem;
+          margin-bottom: 15px;
+     }
+
+     .reviewText {
+          font-size: 0.75rem;
+     }
+
+     .sliderContent {
+          width: 100%;
+     }
+}

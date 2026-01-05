@@ -1,0 +1,83 @@
+.users {
+     position: relative;
+     width: 100%;
+     background: url('/images/users-bg.png') center / cover no-repeat;
+     overflow: hidden
+}
+
+.leftLine {
+     left: 5%;
+     background: var(--color-lime);
+}
+
+.rightLine {
+     right: 5%;
+     background: var(--color-lime);
+}
+
+.usersContainer {
+     max-width: 1260px;
+     margin: 0 auto;
+     position: relative;
+     z-index: 2;
+     padding: 10px 0 20px 0;
+}
+
+.marqueeWrapper {
+     /* overflow: hidden; */
+     width: 100%;
+     padding: 30px 0;
+     display: flex;
+     will-change: transform;
+}
+
+/* Height using calc */
+.marquee {
+     display: flex;
+     gap: 30px;
+     height: 100%;
+     align-items: center;
+}
+
+/* Show 3 logos on large screens */
+.logoItem {
+     flex: 0 0 calc(100% / 4);
+     display: flex;
+     justify-content: center;
+     position: relative;
+}
+
+.logoItem img {
+     max-height: 350px;
+     width: 100%;
+     object-fit: contain;
+     cursor: pointer;
+}
+
+/* Tooltip */
+.tooltip {
+     position: absolute;
+     bottom: 0px;
+     background: #000;
+     color: #fff;
+     font-size: 14px;
+     padding: 6px 10px;
+     border-radius: 6px;
+     white-space: nowrap;
+     opacity: 0;
+     transform: translateY(10px);
+     transition: all 0.3s ease;
+     pointer-events: none;
+}
+
+.logoItem:hover .tooltip {
+     opacity: 1;
+     transform: translateY(0);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+     .marquee {
+          gap: 20px;
+     }
+}
