@@ -18,7 +18,7 @@ export default function WhatsAppChatbot() {
           }
      };
 
-     const handleKeyPress = (e) => {
+     const handleKeyPress = (e: any) => {
           if (e.key === 'Enter' && !e.shiftKey) {
                e.preventDefault();
                handleSendMessage();
