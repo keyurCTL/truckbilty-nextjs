@@ -72,14 +72,14 @@ export default function Hero() {
 
                          <div className={styles.contactNumbers}>
                               <div className='call-now'>Call Us -</div>
-                              <a href="tel:+919680767999">
-                                   <span>+91 96807 67999</span>
-                              </a>
-                              <a href="tel:+919998060916">
-                                   <span>+91 99980 60916</span>
+                              <a href="tel:+919680706799">
+                                   <span>+91 96807 06799</span>
                               </a>
                               <a href="tel:+917698945785">
                                    <span>+91 76989 45785</span>
+                              </a>
+                              <a href="tel:+919998060916">
+                                   <span>+91 99980 60916</span>
                               </a>
                          </div>
 

@@ -96,23 +96,23 @@ const Footer = () => {
                                              <img src="/images/envelope.svg" alt="envelope" />
                                              <span>truckbilty@gmail.com</span>
                                         </a>
-                                        <a href="tel:+9196807067999" className="contact-link">
+                                        <a href="tel:+919680706799" className="contact-link">
                                              <img src="/images/call.svg" alt="call" />
-                                             <span>+91 968070 67999</span>
-                                        </a>
-                                        <a href="tel:+919998060916" className="contact-link">
-                                             <img src="/images/call.svg" alt="call" />
-                                             <span>+91 99980 60916</span>
+                                             <span>+91 96807 06799</span>
                                         </a>
                                         <a href="tel:+917698945785" className="contact-link">
                                              <img src="/images/call.svg" alt="call" />
                                              <span>+91 76989 45785</span>
                                         </a>
+                                        <a href="tel:+919998060916" className="contact-link">
+                                             <img src="/images/call.svg" alt="call" />
+                                             <span>+91 99980 60916</span>
+                                        </a>
                                    </div>
                               </div>
 
                               <div className={styles.ftTwo}>
-                                   <img src="/images/logo/Truck Bilty-04.svg" alt="TruckBilty Logo" />
+                                   <img src="/images/logo/tb-logo.svg" alt="TruckBilty Logo" />
                               </div>
 
                               <div className={styles.ftThree}>
@@ -121,7 +121,7 @@ const Footer = () => {
                                         <a href="https://www.instagram.com/truckbilty" target="_blank">
                                              <img src="/images/insta.svg" alt="Instagram" />
                                         </a>
-                                        <a href="https://www.facebook.com/truckbilty" target="_blank">
+                                        <a href="https://www.facebook.com/truckbiltylr" target="_blank">
                                              <img src="/images/facebook.svg" alt="Facebook" />
                                         </a>
                                         <a href="https://youtube.com/@truckbilty" target="_blank">
@@ -169,9 +169,9 @@ const Footer = () => {
                               </div>
 
                               <div className={styles.footerNavigation}>
-                                   <Link href="/terms-and-conditions" target='_blank'>Terms & Conditions</Link>
-                                   <Link href="/privacy-policy" target='_blank'>Privacy Policy</Link>
-                                   <Link href="/refund-policy" target='_blank'>Refund Policy</Link>
+                                   <a href="/terms-and-conditions">Terms & Conditions</a>
+                                   <a href="/privacy-policy">Privacy Policy</a>
+                                   <a href="/refund-policy">Refund Policy</a>
                               </div>
                          </div>
 

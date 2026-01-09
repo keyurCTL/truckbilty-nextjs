@@ -7,8 +7,8 @@
      color: var(--color-white);
      border: none;
      border-radius: 50%;
-     width: 60px;
-     height: 60px;
+     width: 55px;
+     height: 55px;
      cursor: pointer;
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
      transition: all 0.3s ease;
@@ -20,6 +20,7 @@
 
 .chat-button:hover {
      background-color: var(--color-secondary);
+     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .chat-window {
@@ -106,7 +107,7 @@
      border-radius: 8px;
      padding: 12px;
      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-     margin-bottom: 100px;
+     margin-bottom: 50px;
 }
 
 .chat-message-text {
@@ -117,9 +118,47 @@
 
 .chat-message-time {
      font-size: 11px;
-     color: var(--color-black);;
+     color: var(--color-black);
      opacity: 0.6;
      margin: 0;
+}
+
+.quick-replies {
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+     margin-bottom: 16px;
+}
+
+.quick-reply-button {
+     background-color: var(--color-white);
+     border: 1px solid var(--color-primary);
+     border-radius: 20px;
+     padding: 10px 16px;
+     cursor: pointer;
+     transition: all 0.2s ease;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-size: 14px;
+     color: var(--color-black);
+     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.quick-reply-button:hover {
+     background-color: var(--color-primary);
+     color: var(--color-white);
+     transform: scale(1.02);
+     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.quick-reply-icon {
+     font-size: 18px;
+}
+
+.quick-reply-text {
+     flex: 1;
+     text-align: left;
 }
 
 .chat-input-container {
@@ -177,8 +216,10 @@
 }
 
 .close-icon {
-     font-size: 30px;
-     font-weight: 300;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 36px;
 }
 
 @media (max-width: 640px) {

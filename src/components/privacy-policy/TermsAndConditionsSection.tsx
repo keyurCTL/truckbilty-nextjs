@@ -154,7 +154,7 @@ const TermsAndConditionsSection = () => {
             <p><strong>Company:</strong> TruckBilty LLP</p>
             <p><strong>Address:</strong> 916, City Centre 2, Science City Rd, near CIMS Hospital, Sola, Ahmedabad – 380060</p>
             <p><strong>Email:</strong> support@truckbilty.com</p>
-            <p><strong>Phone:</strong> +91 9998060916</p>
+            <p><strong>Phone:</strong> <a href="tel:++919998060916">+91 9998060916</a></p>
           </div>
 
         </div>

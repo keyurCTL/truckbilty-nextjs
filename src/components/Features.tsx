@@ -4,92 +4,69 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Features.module.css';
+import { featuresData } from './common/featuresData';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const featuresData = [
-     {
-          icon: '/images/bilty.svg',
-          title: 'Bilty / LR',
-          description: 'Generate / Edit / Delete - Topay or To be Billed Bilty and Share by Email or WhatsApp to Customer'
-     },
-     {
-          icon: '/images/load-advice.svg',
-          title: 'Load Advice',
-          description: 'Generate Loading Slip By Entering Truck Number, From - To, Rate and Customer name'
-     },
-     {
-          icon: '/images/invoice.svg',
-          title: 'Invoice',
-          description: 'Generate Invoice From Loading Slip & Topay Bilty Or By Entering Manual Data'
-     },
-     {
-          icon: '/images/quotation.svg',
-          title: 'Create Party',
-          description: 'Create Consignor/Consignee By Entering GST No. Only, Name And Address Will be Auto fill'
-     },
-     {
-          icon: '/images/income.svg',
-          title: 'Manage Account',
-          description: 'Manage Bilty Advance and Invoice Amount and keep track on payment'
-     },
-     {
-          icon: '/images/invoice.svg',
-          title: 'Quick Reports',
-          description: 'Generate Ladger Report, Bilty / LR Report, Invoice Report, Advance Report Etc.'
-     }
-];
 
 export default function Features() {
      const featuresRef = useRef<HTMLElement>(null);
 
      useEffect(() => {
           const ctx = gsap.context(() => {
-               // Features heading container
-               gsap.from(`.${styles.headingDesign}`, {
+
+               // Heading timeline
+               const headingTl = gsap.timeline({
                     scrollTrigger: {
                          trigger: `.${styles.headingDesign}`,
                          start: 'top 80%',
-                         toggleActions: 'play none none reverse'
-                    },
-                    y: 50,
-                    opacity: 0,
-                    duration: 1,
-                    ease: 'power3.out'
+                    }
                });
 
-               // Features heading h1
-               gsap.from(`.${styles.headingDesign} h1`, {
-                    scrollTrigger: {
-                         trigger: `.${styles.headingDesign}`,
-                         start: 'top 80%',
-                         toggleActions: 'play none none reverse'
-                    },
-                    scale: 0.5,
-                    opacity: 0,
-                    duration: 0.8,
-                    delay: 0.1,
-                    ease: 'back.out(1.7)'
-               });
+               headingTl
+                    .from(`.${styles.headingDesign}`, {
+                         y: 50,
+                         opacity: 0,
+                         duration: 1,
+                         ease: 'power3.out'
+                    })
+                    .from(`.${styles.headingDesign} h1`, {
+                         scale: 0.5,
+                         opacity: 0,
+                         duration: 0.8,
+                         ease: 'back.out(1.7)'
+                    }, '-=0.6');
 
-               // Features cards
+               // Feature cards
                gsap.from(`.${styles.featuresCard}`, {
                     scrollTrigger: {
                          trigger: `.${styles.featuresGrid}`,
                          start: 'top 80%',
-                         toggleActions: 'play none none reverse'
                     },
                     y: 50,
                     opacity: 0,
                     duration: 0.8,
                     stagger: 0.15,
-                    delay: 0.2,
                     ease: 'power3.out'
                });
+
+               // Icons
+               gsap.from(`.${styles.fcCardIcon}`, {
+                    scrollTrigger: {
+                         trigger: `.${styles.featuresGrid}`,
+                         start: 'top 80%',
+                    },
+                    scale: 0,
+                    duration: 0.5,
+                    stagger: 0.15,
+                    delay: 0.2,
+                    ease: 'back.out(1.7)'
+               });
+
           }, featuresRef);
 
           return () => ctx.revert();
      }, []);
+
 
      return (
           <section id="features" className={styles.features} ref={featuresRef}>

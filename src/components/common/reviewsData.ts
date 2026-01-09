@@ -1,4 +1,11 @@
-export const reviewsData = [
+type Review = {
+  id: number;
+  name: string;
+  rating: number;
+  text: string;
+}
+
+export const reviewsData: Review[] = [
   {
     id: 1,
     name: 'ARC Transport',

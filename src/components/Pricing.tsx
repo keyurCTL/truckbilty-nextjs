@@ -211,6 +211,11 @@ const Pricing = () => {
                               <div className="flower bottom">
                                    <img src="/images/flower-top.svg" alt="flower-bottom" />
                               </div>
+                              <p>
+                                   Truck Bilty offers a 7-day free trial with full access to all features for new registrations.
+                                   You can explore the complete software, create and manage documents
+                                   and experience the full benefits before choosing a paid plan.
+                              </p>
                          </div>
 
                          {/* Desktop View */}

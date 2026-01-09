@@ -24,6 +24,7 @@
 :root {
   /* Brand Colors */
   --color-primary: #0B5D8A;
+  --color-primary-light: #0b5e8a30;
   --color-secondary: #EC1164;
   --color-teal: #00B8AC;
   --color-off-white: #FEFCDF;

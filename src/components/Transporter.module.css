@@ -98,7 +98,7 @@
           width: 100vw;
           height: auto;
           min-height: unset;
-          padding: 20px 20px 0 20px;
+          padding: 20px 15px 0 15px;
      }
 
      .transOne {
@@ -116,7 +116,7 @@
           left: 0;
           transform: none;
           bottom: auto;
-          max-width: 90vw;
+          max-width: 95vw;
           margin-top: 20px;
      }
 
@@ -126,8 +126,12 @@
      }
 
      .transSlide :global(.heading-design) {
-          margin-bottom: 20px;
+          /* margin-bottom: 20px; */
           padding: 30px 0;
+     }
+
+     .transSlide :global(.heading-design) h1 {
+          font-size: 2rem;
      }
 
      .leftLine,

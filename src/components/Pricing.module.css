@@ -135,7 +135,7 @@
      width: 100%;
      border-radius: 200px 200px 12px 12px;
      overflow: hidden;
-     background: #fff;
+     background: var(--color-white);
 }
 
 /* Top yellow rounded part */

@@ -55,13 +55,16 @@
      background: var(--color-lime);
      border-radius: 50%;
      border: 2px solid var(--color-black);
-     padding: 10px;
+     padding: 12px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }
 
 .fcCardIcon img {
      width: 100%;
      height: auto;
-     filter: drop-shadow(1px 1px 2px #3d3d3d);
+     filter: drop-shadow(1px 1px 5px #00000050);
 }
 
 .fcCardContent {
@@ -131,5 +134,11 @@
 @media (max-width: 576px) {
      .featuresGrid {
           grid-template-columns: repeat(1, 1fr);
+          padding: 20px 40px 50px 40px;
+          gap: var(--spacing-md);
+     }
+
+     .fcCardContent {
+          min-height: 200px;
      }
 }

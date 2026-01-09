@@ -30,39 +30,64 @@ export default function Navigation() {
   };
 
   // Handle nav link click
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  const handleSectionClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
     e.preventDefault();
     closeMobileMenu();
 
     if (pathname === '/') {
-      // Already on home page, just scroll to section
       const target = document.getElementById(sectionId);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         setActiveSection(sectionId);
       }
-      return;
+    } else {
+      router.push(`/#${sectionId}`);
     }
+  };
 
-    // Navigate to home page first, then scroll will happen via useEffect
-    router.push(`/#${sectionId}`);
+  const handleBlogsClick = () => {
+    closeMobileMenu();
   };
 
   useEffect(() => {
-    if (pathname !== '/') return;
-    if (!window.location.hash) return;
-
-    const id = window.location.hash.replace('#', '');
-    const target = document.getElementById(id);
-
-    if (!target) return;
-
-    // slight delay to ensure layout is ready
-    setTimeout(() => {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setActiveSection(id);
-    }, 100);
+    if (pathname === '/blogs') {
+      setActiveSection('blogs');
+    } else if (pathname === '/') {
+      setActiveSection('home');
+    } else {
+      setActiveSection('');
+    }
   }, [pathname]);
+
+  // Handle hash navigation when coming from another page
+  useEffect(() => {
+    if (pathname !== '/') return;
+    
+    const hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+
+    const scrollToSection = () => {
+      const target = document.getElementById(hash);
+      if (target) {
+        // Use a longer delay to ensure the page is fully loaded
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setActiveSection(hash);
+        }, 150);
+      }
+    };
+
+    // Try immediately
+    scrollToSection();
+
+    // Also try after a short delay as fallback
+    const timeoutId = setTimeout(scrollToSection, 300);
+
+    return () => clearTimeout(timeoutId);
+  }, [pathname, typeof window !== 'undefined' ? window.location.hash : '']);
 
   // Navbar scroll behavior
   useEffect(() => {
@@ -124,6 +149,7 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScrollSpy);
   }, [pathname]);
 
+
   return (
     <>
       <nav
@@ -133,15 +159,15 @@ export default function Navigation() {
       >
         <div className={styles.navContainer}>
           <div className={styles.navWrapper}>
-            <a href="#home" className={styles.logo} onClick={(e) => handleNavClick(e, 'home')}>
-              <img src="/images/logo/Truck Bilty-04.svg" alt="TruckBilty Logo" />
+            <a href="#home" className={styles.logo} onClick={(e) => handleSectionClick(e, 'home')}>
+              <img src="/images/logo/tb-logo.svg" alt="TruckBilty Logo" />
             </a>
             <ul className={`${styles.navMenu} ${mobileMenuOpen ? styles.active : ''}`}>
               <li>
                 <a
                   href="#home"
                   className={`${styles.navLink} ${activeSection === 'home' ? styles.active : ''}`}
-                  onClick={(e) => handleNavClick(e, 'home')}
+                  onClick={(e) => handleSectionClick(e, 'home')}
                 >
                   Home
                 </a>
@@ -150,7 +176,7 @@ export default function Navigation() {
                 <a
                   href="#features"
                   className={`${styles.navLink} ${activeSection === 'features' ? styles.active : ''}`}
-                  onClick={(e) => handleNavClick(e, 'features')}
+                  onClick={(e) => handleSectionClick(e, 'features')}
                 >
                   Features
                 </a>
@@ -159,7 +185,7 @@ export default function Navigation() {
                 <a
                   href="#details"
                   className={`${styles.navLink} ${activeSection === 'details' ? styles.active : ''}`}
-                  onClick={(e) => handleNavClick(e, 'details')}
+                  onClick={(e) => handleSectionClick(e, 'details')}
                 >
                   Details
                 </a>
@@ -168,7 +194,7 @@ export default function Navigation() {
                 <a
                   href="#pricing"
                   className={`${styles.navLink} ${activeSection === 'pricing' ? styles.active : ''}`}
-                  onClick={(e) => handleNavClick(e, 'pricing')}
+                  onClick={(e) => handleSectionClick(e, 'pricing')}
                 >
                   Pricing
                 </a>
@@ -177,9 +203,19 @@ export default function Navigation() {
                 <a
                   href="#reviews"
                   className={`${styles.navLink} ${activeSection === 'reviews' ? styles.active : ''}`}
-                  onClick={(e) => handleNavClick(e, 'reviews')}
+                  onClick={(e) => handleSectionClick(e, 'reviews')}
                 >
                   Reviews
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/blogs"
+                  className={`${styles.navLink} ${pathname === '/blogs' ? styles.active : ''
+                    }`}
+                  onClick={handleBlogsClick}
+                >
+                  Blogs
                 </a>
               </li>
               <li className={styles.mobileLoginItem}>

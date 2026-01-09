@@ -1,4 +1,24 @@
-export const plansData = [
+type planLimit = {
+  users: string;
+  companies: string;
+  branches: string;
+  bilties: number;
+  invoices: number;
+  loadingSlips: number;
+};
+
+export type planType = {
+  id: string;
+  name: string;
+  duration: string;
+  price: number;
+  usersType: 'single' | 'business';
+  tagline: string;
+  limits: planLimit;
+  current?: boolean;
+};
+
+export const plansData: planType[] = [
   {
     id: 'trans-star',
     name: 'Trans Star',
@@ -64,7 +84,7 @@ export const plansData = [
     },
   },
 
-  // 🚚 Business Plans
+  // Business Plans
   {
     id: 'trans-mileage',
     name: 'Trans Mileage',
